@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Previous head content remains the same until the style section -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Anantharaman Iyer">
+    <meta name="description" content="Personal website for a Georgia Tech student">
+    <meta name="keywords" content="Georgia Tech, Computer Science, Portfolio">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rasa:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+
+    <title>Anantharaman Iyer</title>
+
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            font-family: "Rasa", sans-serif;       
+            height: 100%;
+            color: #333;
+            background-color: #faf5f2;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            padding: 40px 10px;
+            justify-content: flex-start;
+        }
+
+        /* Global Styles */
+        h1 {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #000;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin: 20px 0;
+        }
+
+        /* Header Section */
+        .header {
+            text-align: left;
+            width: 80%;
+            margin: 2% auto 20px auto;
+        }
+
+        .header h3 {
+            font-size: 2.6em;
+            margin-bottom: -20px;
+        }
+
+        .header p {
+            font-size: 1.2em;
+            color: #1e1e1e;
+            margin-top: 15px;
+        }           
+
+        /* Content Section */
+        .content {
+            margin-bottom: 50px;
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .content p {
+            font-size: 1.1em;
+            color: #555;
+            text-align: left;
+            margin: 0 0 5px 0;
+            font-family: "Figtree", serif;
+        }
+
+        /* New styles for two-column layout */
+        .content ul {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            list-style-type: disc;
+            list-style-position: inside;
+            padding: 20px;
+        }
+
+        .content ul li {
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 5px;
+            font-family: "Figtree", serif;
+            padding-right: 20px;
+        }
+
+        .content ul li a {
+            color: #b36d1e;
+            font-weight: normal;
+            text-decoration: underline;
+        }
+
+        .emoji-link {
+            color: #b36d1e;
+            font-weight: normal;
+            text-decoration: underline;
+        }
+
+        .emoji-link::after {
+            content: '🔗';
+            display: inline-block;
+            font-size: 14px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }   
+
+        .emoji-link:hover::after {
+            opacity: 1;
+        }
+
+        .highlight {
+            display: inline-block;
+            position: relative;
+            font-weight: bold;
+            font-size: 2em;
+        }
+
+        .highlight::after {
+            content: '.';
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .highlight:hover::after {
+            opacity: 1;
+        }
+
+        .highlight::before {
+            content: '';
+            position: absolute;
+            bottom: 0px;
+            left: 0;
+            width: 0;   
+            height: 3px;
+            background-color: #333;
+            transition: width 0.3s ease;
+        }
+
+        .highlight:hover::before {
+            width: 100%;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .content ul {
+                grid-template-columns: 1fr;
+            }
+            
+            .header, .content {
+                width: 95%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Main Content -->
+    <div class="header">
+        <h3 class="highlight">Anantharaman Iyer</h3>
+        <p>aiyer355@gatech.edu</p>
+    </div>
+
+    <div class="content">
+        <p>I study CS at Georgia Tech and conduct research on deploying AI models cheaply. Here are some things I've developed:</p>
+        <ul>
+            <li>real-time architecture modification strategies for efficient model deployment in dynamic compute resource environments at <a href="https://www.gtri.gatech.edu/" class="emoji-link" target="_blank" rel="noopener noreferrer">Georgia Tech Research Institute</a></li>
+            <li>depth elastic image segmentation models that retain 95% performance with 40% reduction in latency at <a href="https://gatech-sysml.github.io/" class="emoji-link" target="_blank" rel="noopener noreferrer">Systems for AI Lab</a></li>
+            <li>improved user engagement on the D1 (serverless SQL database) dashboard by 20% through analytics, tracking and tooling overhauls at <a href="https://www.cloudflare.com/" class="emoji-link" target="_blank" rel="noopener noreferrer">Cloudflare</a></li>
+            <li>a custom evaluation framework for LLM workflows, with novel non-LLM reliant metrics for rapid, zero cost evaluations of LLM-generated code at <a href="https://www.clarative.ai/" class="emoji-link" target="_blank" rel="noopener noreferrer">Clarative</a></li>
+            <li>methods to use LLMs in synthetic data generation and data augmentation as a scalable, privacy-preserving solution to analyze features and forecast trends in bulk unstructured data at <a href="https://www.gtri.gatech.edu/" class="emoji-link" target="_blank" rel="noopener noreferrer">Georgia Tech Research Institute</a></li>
+            <li>a constrained-optimization <a href="https://github.com/AnantharamanSI/Counterfactuals" target="_blank" rel="noopener noreferrer">method</a> for generating counterfactuals to uncover bias in AI models (presented at the 2021 IRIS National Science Fair)</li>
+            <li>a damage detection and estimation <a href="https://github.com/AnantharamanSI/ShowKase" target="_blank" rel="noopener noreferrer">tool</a> for homeowners</li>
+            <li><a href="https://github.com/google/BIG-bench" target="_blank" rel="noopener noreferrer">pushing llms to their limits</a> (TMLR Certification Finalist)</li>
+            <li>a mobile app for resolving conflicts among high school students (presented at 2020 International Science and Engineering Fair)</li>
+            <li>computational models of the stimulus response of the Mimosa pudica plant using McCulloch-Pitts neurons abstractions (presented at 2019 International Science and Engineering Fair)</li>
+        </ul>
+
+        <p><br>I love building things, in the digital world and the physical one, playing instruments and teaching (Natural Language Processing)! I make videos on cool concepts I come across on <a class="emoji-link" href="https://www.youtube.com/@AnantharamanSIyer" target="_blank" rel="noopener noreferrer">YouTube</a></p>
+        <p><br>Atlanta, GA</p>
+    </div>
+</body>
+</html>
