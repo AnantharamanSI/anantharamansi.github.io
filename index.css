@@ -1,0 +1,153 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-family: "Rasa", sans-serif;       
+    height: 100%;
+    color: #333;
+    background-color: #fffcfa;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    padding: 40px 10px;
+    justify-content: flex-start;
+}
+
+/* Global Styles */
+h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin: 20px 0;
+}
+
+/* Header Section */
+.header {
+    text-align: left;
+    width: 80%;
+    margin: 2% auto 20px auto;
+}
+
+.header h3 {
+    font-size: 2.6em;
+    margin-bottom: -20px;
+}
+
+.header p {
+    font-size: 1.2em;
+    color: #1e1e1e;
+    margin-top: 15px;
+}           
+
+/* Content Section */
+.content {
+    margin-bottom: 50px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.content p {
+    font-size: 1.1em;
+    color: #555;
+    text-align: left;
+    margin: 0 0 5px 0;
+    font-family: "Figtree", serif;
+}
+
+/* New styles for two-column layout */
+.content ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    list-style-type: disc;
+    list-style-position: inside;
+    padding: 20px;
+}
+
+.content ul li {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 5px;
+    font-family: "Figtree", serif;
+    padding-right: 20px;
+}
+
+.content ul li a {
+    color: #b36d1e;
+    font-weight: normal;
+    text-decoration: underline;
+}
+
+.emoji-link {
+    color: #b36d1e;
+    font-weight: normal;
+    text-decoration: underline;
+}
+
+.emoji-link::after {
+    content: '🔗';
+    display: inline-block;
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}   
+
+.emoji-link:hover::after {
+    opacity: 1;
+}
+
+.highlight {
+    display: inline-block;
+    position: relative;
+    font-weight: bold;
+    font-size: 2em;
+}
+
+.highlight::after {
+    content: '.';
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.highlight:hover::after {
+    opacity: 1;
+}
+
+.highlight::before {
+    content: '';
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 0;   
+    height: 3px;
+    background-color: #333;
+    transition: width 0.3s ease;
+}
+
+.highlight:hover::before {
+    width: 100%;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .content ul {
+        grid-template-columns: 1fr;
+    }
+    
+    .header, .content {
+        width: 95%;
+    }
+}
