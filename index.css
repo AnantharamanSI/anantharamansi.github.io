@@ -38,7 +38,12 @@ p {
 .header {
     text-align: left;
     width: 80%;
-    margin: 2% auto 20px auto;
+    margin: 2% auto 10px auto;
+    position: relative; 
+}
+
+.header a {
+    margin-top: 7%;
 }
 
 .header h3 {
@@ -46,11 +51,32 @@ p {
     margin-bottom: -20px;
 }
 
-.header p {
+.social-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 16px;
+    margin-bottom: 10px;
+    height: 20px;
+    align-items: center;
+}
+
+.social-container p {
     font-size: 1.2em;
     color: #1e1e1e;
     margin-top: 15px;
-}           
+    margin-bottom: 2px;
+}  
+
+.social-container a {
+    margin-top: 10px;
+}
+
+.social-container a img {
+    margin-top: 0;
+    display: block;
+    cursor: pointer;
+    border: none;
+}
 
 /* Content Section */
 .content {
@@ -129,7 +155,7 @@ p {
 .highlight::before {
     content: '';
     position: absolute;
-    bottom: 0px;
+    bottom: 1px;
     left: 0;
     width: 0;   
     height: 3px;
