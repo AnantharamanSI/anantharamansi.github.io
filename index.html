@@ -1,63 +1,368 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Previous head content remains the same until the style section -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Anantharaman Iyer">
-    <meta name="description" content="Personal website for a Georgia Tech student">
-    <meta name="keywords" content="Georgia Tech, Computer Science, Portfolio">
-
+    <title>Anantharaman Iyer - Website</title>
+    <link rel="stylesheet" href="index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap" rel="stylesheet"> -->
     <link href="https://fonts.googleapis.com/css2?family=Rasa:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-    <link rel="stylesheet" href="index.css">
-
-    <!-- Noto Serif Display Bold 700 -->
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
     <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-
-    <title>Anantharaman Iyer</title>
+    <meta name="description" content="Anantharaman Iyer - Computer Science researcher at Georgia Institute of Technology. Research in Elastic Inference, Knowledge Representation and NLP.">
+    <meta name="keywords" content="Anantharaman Iyer, Georgia Tech, Georgia Institute of Technology, Iyer Georgia Tech, Computer Science, GTRI, Anantharaman Iyer Google Scholar, Anantharaman Iyer LinkedIn, Elastic Inference, Knowledge Representation, NLP, Researcher, SAIL Lab, NLP X lab, software engineering intern, software engineer intern, software engineer, machine learning engineer, data scientist, AI researcher, artificial intelligence, NLP engineer, Georgia Tech researcher, Anantharaman Iyer Ramp, Anantharaman Iyer Cloudflare, Anantharaman Iyer software engineer, Anantharaman Iyer machine learning">
+    <meta name="author" content="Anantharaman Iyer">
+    <link rel="canonical" href="https://anantharamansi.github.io/">
+    <!-- Open Graph tags -->
+    <meta property="og:title" content="Anantharaman Iyer - Georgia Tech Researcher">
+    <meta property="og:description" content="Anantharaman Iyer is a Computer Science researcher at Georgia Institute of Technology, specializing in Elastic Inference and Knowledge Representation.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://anantharamansi.github.io/">
+    <meta property="og:image" content="https://anantharamansi.github.io/assets/anantharaman-headshot.jpg">
+    <!-- Twitter Card tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Anantharaman Iyer - Georgia Tech Researcher">
+    <meta name="twitter:description" content="Anantharaman Iyer is a Computer Science researcher at Georgia Institute of Technology, specializing in Elastic Inference and Knowledge Representation.">
+    <meta name="twitter:image" content="https://anantharamansi.github.io/assets/anantharaman-headshot.jpg">
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Anantharaman Iyer",
+      "url": "https://anantharamansi.github.io/",
+      "image": "https://anantharamansi.github.io/assets/anantharaman-headshot.jpg",
+      "sameAs": [
+        "https://scholar.google.com/citations?user=jl-cwYxZa28C&hl=en",
+        "https://github.com/anantharamansi",
+        "https://linkedin.com/in/anantharamansi/"
+      ],
+      "jobTitle": "Research Assistant",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Georgia Institute of Technology"
+      },
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "Georgia Institute of Technology"
+      }
+    }
+    </script>
 </head>
-
 <body>
-    <!-- Main Content -->
-    <div class="header">
-        <h3 class="highlight">Anantharaman Iyer</h3>
-        <div class="social-container">
-            <p>aiyer355@gatech.edu</p>
-            <a href="https://github.com/AnantharamanSI" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
-                <img src="/assets/github-mark.svg" width="20" alt="GitHub">
-            </a>
-            <a href="https://www.linkedin.com/in/anantharaman-s-iyer-20716b298/" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
-                <img src="/assets/InBug-Black.png" width="20" alt="GitHub">
-            </a>
+    <header class="site-header">
+        <div class="container">
+            <div class="logo">Anantharaman Iyer</div>
+            <nav>
+                <ul>
+                    <li><a href="#about" class="active">About</a></li>
+                    <!-- <li><a href="#news">News</a></li> -->
+                    <li><a href="#experience-highlights">Experience</a></li>
+                    <li><a href="#research">Research & Publications</a></li>
+                    <li><a href="#projects-experiences">Projects & Work</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li>
+                        <button id="darkModeToggle" aria-label="Switch to Dark Mode">
+                            <i id="darkModeIcon" class="fas fa-moon fa-lg"></i>
+                            <span id="darkModeText" class="sr-only">Switch to Dark Mode</span>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
         </div>
+    </header>
+
+    <div class="container">
+        <section id="about" class="about-section">
+            <div class="about-content">
+                <h1>Anantharaman Iyer</h1>
+                <p>
+                    I'm an undergraduate student studying Computer Science at Georgia Tech. I love building things&mdash;in the digital world and the physical one, playing instruments and teaching (Natural Language Processing)!
+                </p>
+                <p>
+                    I'm a Research Assistant at the <a href="https://www.gtri.gatech.edu/focus-areas/advanced-research-computing-and-artificial-intelligence" target="_blank">GTRI ARCAID Lab</a>, where I explore distributed hierarchical representation learning and synthetic data generation. I'm also involved with the <a href="https://gatech-sysml.github.io/" target="_blank">GT Systems for AI Lab</a>, developing elastic inference techniques for vision models.
+                </p>
+                <p>
+                    I also occasionally post <a href="https://www.youtube.com/@AnantharamanSIyer" target="_blank">YouTube</a> videos about cool concepts.
+                </p>
+                <div class="profile-links">
+                    <a href="https://github.com/anantharamansi" target="_blank" title="GitHub"><i class="fab fa-github fa-2x"></i><span class="sr-only">GitHub</span></a>
+                    <a href="https://linkedin.com/in/anantharamansi" target="_blank" title="LinkedIn"><i class="fab fa-linkedin fa-2x"></i><span class="sr-only">LinkedIn</span></a>
+                    <a href="https://scholar.google.com/citations?user=jl-cwYxZa28C&hl=en" target="_blank" title="Google Scholar" aria-label="Google Scholar Profile"><i class="fas fa-graduation-cap fa-2x"></i><span class="sr-only">Google Scholar</span></a>
+                    <a href="mailto:aiyer355@gatech.edu" title="Email"><i class="fas fa-envelope fa-2x"></i><span class="sr-only">Email</span></a>
+                    <!-- <a href="assets/resume.pdf" target="_blank" title="Resume" aria-label="Resume"><i class="fas fa-file-pdf fa-2x"></i><span class="sr-only">Resume</span></a> -->
+                </div>
+            </div>
+            <div class="about-photo">
+                <img src="assets/anantharaman-headshot.jpg" alt="Anantharaman Iyer Professional Headshot">
+            </div>
+        </section>
+
+        <!-- <section id="news" class="news-section">
+            <h2>Recent News & Updates</h2>
+            <ul>
+                <li><strong>Summer 2026</strong> – 🎉 Excited to be joining Company as a Software Engineering Intern!</li>
+                <li><strong>May 2025</strong> – 🎉 Enhancing Military Family Readiness and Resilience Programs Through LLM-Generated Synthetic Data and Natural Language Interfaces was accepted to MHSRS 2025!</li>
+            </ul>
+        </section> -->
+
+        <section id="experience-highlights" class="experience-timeline-section homepage-experience-section">
+            <h2>Experience Highlights</h2>
+            <ul class="timeline">
+
+                <li class="timeline-row">
+                    <span class="timeline-dot"></span> <div class="timeline-item left">
+                        <div class="timeline-content">
+                            <a href="#exp-ramp" class="timeline-link-overlay"><span class="sr-only">View details for Ramp Business Corp. experience</span></a>
+                            <div class="far-side">
+                                <img src="assets/ramp.jpeg" alt="Ramp Business Corporation Logo" class="company-logo-timeline">
+                                <span class="timeline-dates">May 2025 - Aug 2025</span>
+                            </div>
+                            <div class="center-side">
+                                <h4 class="timeline-company">Ramp</h4>
+                                <p class="timeline-role">Software Engineering Intern</p>
+                                <p class="timeline-description">Fraud detection system for stolen bank credentials.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item right">
+                         <div class="timeline-content">
+                            <a href="#exp-gtri" class="timeline-link-overlay"><span class="sr-only">View details for Georgia Tech Research Institute experience</span></a>
+                            <div class="far-side">
+                                <img src="assets/gtri.jpg" alt="Georgia Tech Research Institute (GTRI) Logo" class="company-logo-timeline">
+                                <span class="timeline-dates">Jan 2024 - Present</span>
+                            </div>
+                            <div class="center-side">
+                                <h4 class="timeline-company">Georgia Tech Research Institute</h4>
+                                <p class="timeline-role">Advisors: <a href="https://scholar.google.com/citations?user=FPtjf0gAAAAJ&hl=en" target="_blank" class="interactive-link">Clayton Kerce</a>, <a href="https://scholar.google.com/citations?user=5JcRw-sAAAAJ&hl=en" target="_blank" class="interactive-link">Pat Langley</a></p>
+                                <p class="timeline-description">Learning hierarchical representations in a distributed setting.</p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="timeline-row">
+                    <span class="timeline-dot"></span> <div class="timeline-item left">
+                         <div class="timeline-content">
+                            <a href="#exp-cloudflare" class="timeline-link-overlay"><span class="sr-only">View details for Cloudflare Inc. experience</span></a>
+                            <div class="far-side">
+                                <img src="assets/cloudflare.jpeg" alt="Cloudflare Inc. Logo" class="company-logo-timeline">
+                                <span class="timeline-dates">June 2024 - Aug 2024</span>
+                            </div>
+                            <div class="center-side">
+                                <h4 class="timeline-company">Cloudflare</h4>
+                                <p class="timeline-role">Software Engineering Intern</p>
+                                <p class="timeline-description">Improved dashboard data exploration tooling.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item right">
+                         <div class="timeline-content">
+                            <a href="#exp-sail" class="timeline-link-overlay"><span class="sr-only">View details for GT SAIL experience</span></a>
+                            <div class="far-side">
+                                <img src="assets/sail.png" alt="SAIL Logo" class="company-logo-timeline" style="background-color: white;">
+                                <span class="timeline-dates">Jan 2025 - Present</span>
+                            </div>
+                            <div class="center-side">
+                                <h4 class="timeline-company">Systems for AI Lab (SAIL)</h4>
+                                <p class="timeline-role">Advisor: <a href="https://scholar.google.com/citations?user=7P-gZioAAAAJ&hl=en" target="_blank" class="interactive-link">Alexey Tumanov</a></p>
+                                <p class="timeline-description">Modifying transformer architectures for elastic inference.</p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="timeline-row">
+                    <span class="timeline-dot"></span>
+                    <div class="timeline-item left">
+                         <div class="timeline-content">
+                            <a href="#exp-clarative" class="timeline-link-overlay"><span class="sr-only">View details for Clarative experience</span></a>
+                            <div class="far-side">
+                                <img src="assets/clarative.jpeg" alt="Clarative Logo" class="company-logo-timeline">
+                                <span class="timeline-dates">April 2024 - June 2024</span>
+                            </div>
+                            <div class="center-side">
+                                <h4 class="timeline-company">Clarative</h4>
+                                <p class="timeline-role">Consulting AI Engineer</p>
+                                <p class="timeline-description">Applied machine learning for genetic trait prediction.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item right">
+                         <div class="timeline-content">
+                             <a href="#exp-cs4650" class="timeline-link-overlay"><span class="sr-only">View details for GT CS4650 NLP experience</span></a>
+                             <div class="far-side">
+                                 <img src="assets/gt.jpg" alt="Georgia Tech Logo" class="company-logo-timeline">
+                                 <span class="timeline-dates">Jan 2025 - May 2025</span>
+                             </div>
+                             <div class="center-side">
+                                 <h4 class="timeline-company">GT CS 4650: Natural Language Processing</h4>
+                                  <p class="timeline-role">Teaching Assistant</p>
+                                 <p class="timeline-description">First undergrad to TA this upper-level course.</p>
+                             </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <section id="research" class="research-section">
+            <h2>Research & Publications</h2>
+
+            <!-- <section class="featured-projects-section">
+                <h3>Highlighted Research Projects</h3>
+                <div class="project-horizontal-list">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="assets/" alt="Example Project thumbnail">
+                        </div>
+                        <div class="project-details">
+                            <h3><strong>Example Project</strong></h3>
+                            <p class="project-authors">Author 1, <strong>Author 2</strong>, Author 3</p>
+                            <p class="project-description">
+                               Lorem ipsum dolor sit amet
+                            </p>
+                            <p class="project-links">
+                                <a href="https://www.arxiv.org/paper.pdf" target="_blank">Paper</a>
+                                <a href="https://github.com/project" target="_blank">Code</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section> -->
+
+            <h3>Publications</h3>
+            <p style="font-size: 0.9em; color: #555; margin-bottom: 1.5em;">*= denotes equal contribution</p>
+            <ul class="publications-list">
+                <li>
+                    <span class="publication-title"><strong>Enhancing Military Family Readiness and Resilience Programs Through LLM-Generated Synthetic Data and Natural Language Interfaces</strong>.</span>
+                    <span class="publication-authors"><strong>Anantharaman Iyer</strong>*, Mika Okamoto*, Agustin Lorenzo, Blair Johnson, Moon Kim, Clayton Kerce, Margarita Gonzalez.</span>
+                    <span class="publication-venue">Accepted to <a href = 'https://mhsrs.health.mil' target = '_blank'>MHSRS 2025</a>.</span>
+                </li>
+                <li>
+                    <span class="publication-title"><strong>Beyond the Imitation Game: Quantifying and extrapolating the capabilities of language models</strong>.</span>
+                    <span class="publication-authors">Aarohi Srivastava et al.</span>
+                    <span class="publication-venue">Transactions on Machine Learning Research.</span>
+                    <span class="publication-links">
+                        <a href="https://openreview.net/pdf?id=uyTL5Bvosj" target="_blank">Paper</a>
+                    </span>
+                </li>
+            </ul>
+
+            <h3>Research Lab Experiences</h3>
+            <div class="card-banner-container">
+                <div class="card-banner" id="exp-gtri">
+                    <img src="assets/gtri.jpg" alt="Georgia Tech Research Institute (GTRI) Logo">
+                    <div class="card-banner-text">
+                        <h4>Georgia Tech Research Institute (GTRI) - ARCAID</h4>
+                        <p class="role-dates">Research Assistant | January 2024 – Present</p>
+                         <div class="artifact-links">
+                            <a href="https://scholar.google.com/citations?user=FPtjf0gAAAAJ&hl=en" target="_blank">Advisor: Clayton Kerce</a>
+                            <a href="https://scholar.google.com/citations?user=5JcRw-sAAAAJ&hl=en" target="_blank">Advisor: Pat Langley</a>
+                         </div>
+                        <ul>
+                            <li>Adapting hiearchical representation learning systems to operate in distributed sensor networks.</li>
+                            <li>Developed strategies for real-time architecture modifications for efficient model deployment in dynamic compute resource environments. Submitted to NeurIPS ‘25.</li>
+                            <li>Developed synthetic data generation and retrieval, fine-tuned lightweight classifiers to achieve near parity with Llama-3-70B, enabling field deployment on CPUs.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-banner" id="exp-sail">
+                    <img src="assets/sail.png" alt="Systems for AI Lab (SAIL) Logo" style="background-color: white;">
+                    <div class="card-banner-text">
+                        <h4>Georgia Tech - Systems for AI Lab (SAIL)</h4>
+                        <p class="role-dates">Research Assistant | January 2025 – Present</p>
+                        <div class="artifact-links">
+                            <a href="https://scholar.google.com/citations?user=7P-gZioAAAAJ&hl=en" target="_blank">Advisor: Alexey Tumanov</a>
+                            <a href="https://gatech-sysml.github.io/" target="_blank">Website</a>
+                        </div>
+                        <ul>
+                            <li>Researching multi-size patch splitting and adaptive patch retention for vision transformers.</li>
+                            <li>Modified vision transformer architectures for elastic inference, by patching together parts of different networks using an information similarity selection algorithm. Submitted to ICLR ‘26.</li>
+                        </ul>
+                   </div>
+                </div>
+                <div class="card-banner" id="exp-nlpx">
+                    <img src="assets/gt.jpg" alt="Georgia Tech Logo">
+                    <div class="card-banner-text">
+                        <h4>Georgia Tech - NLP X Lab</h4>
+                        <p class="role-dates">Research Assistant | January 2024 – May 2024</p>
+                         <div class="artifact-links">
+                            <a href="https://scholar.google.com/citations?user=BfOdG-oAAAAJ" target="_blank">Advisor: Wei Xu</a>
+                            <a href="https://cocoxu.github.io/" target="_blank">Website</a>
+                         </div>
+                        <ul>
+                            <li>Developed a tool to improve information attribution and authorship verification in LLM generated content.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects-experiences" class="projects-experiences-section">
+            <h2>Projects & Work Experiences</h2>
+
+            <h3>Work Experience</h3>
+            <div class="card-banner-container">
+                <div class="card-banner" id="exp-ramp">
+                    <img src="assets/ramp.jpeg" alt="Ramp Business Corporation Logo">
+                    <div class="card-banner-text">
+                        <h4>Ramp Business Corp.</h4>
+                        <p class="role-dates">Software Engineering Intern | May 2025 – August 2025</p>
+                        <div class="artifact-links"></div>
+                        <ul>
+                            <li>Developed a comprehensive fraud detection system to flag the use of stolen credentials on Ramp’s bank linking service, saving ~$300k/yr.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-banner" id="exp-cloudflare">
+                    <img src="assets/cloudflare.jpeg" alt="Cloudflare Inc. Logo">
+                    <div class="card-banner-text">
+                        <h4>Cloudflare Inc.</h4>
+                        <p class="role-dates">Software Engineering Intern | June 2024 – August 2024</p>
+                        <div class="artifact-links"></div>
+                        <ul>
+                            <li>Overhauled the D1 serverless SQL database dashboard to allow data exploration, ease onboarding & make billing transparent, improving user engagement by 20%.</li>
+                            <li>Increased compliance & security by writing an API proxy on Workers (V8 isolates) to intercept user actions and record audit logs using Typescript with Go and Rust.</li>
+                            <li>Upgraded D1 insights on the open source “Wrangler” command line tool.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-banner" id="exp-clarative">
+                    <img src="assets/clarative.jpeg" alt="Clarative Logo">
+                    <div class="card-banner-text">
+                        <h4>Clarative AI</h4>
+                        <p class="role-dates">Consulting AI Engineer | April 2024 – June 2024<p>
+                        <div class="artifact-links"></div>
+                        <ul>
+                            <li>Designed & developed a custom evaluation framework for LLM workflows, with a React.js visualization dashboard for clean, extendable & deferrable evaluations.</li>
+                            <li> Created novel non-LLM reliant metrics for rapid, zero cost evaluations of LLM-generated code.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="contact" class="contact-section">
+            <h2>Contact</h2>
+            <p>I love forming new connections. Feel free to reach out to me!</p>
+            <p>
+                📬 <a href="mailto:aiyer355@gatech.edu">aiyer355@gatech.edu</a><br>
+                <img src="/assets/InBug-Black.png" width="20" style="display: inline; padding: 0px 3px;" alt="LinkedIn"> <a href="https://linkedin.com/in/anantharamansi" target="_blank">linkedin.com/in/anantharamansi</a>
+            </p>
+        </section>
     </div>
 
-    <div class="content">
-        <p>I study CS at Georgia Tech and conduct AI research. Here are some things I've developed:</p>
-        <ul>
-            <li>real-time architecture modification strategies for efficient model deployment in dynamic compute resource environments at <a href="https://www.gtri.gatech.edu/" class="emoji-link" target="_blank" rel="noopener noreferrer">Georgia Tech Research Institute</a></li>
-            <li>depth elastic image segmentation models that retain 95% performance with 40% reduction in latency at <a href="https://gatech-sysml.github.io/" class="emoji-link" target="_blank" rel="noopener noreferrer">Systems for AI Lab</a></li>
-            <li>improved user engagement on the D1 (serverless SQL database) dashboard by 20% through analytics, tracking and tooling overhauls at <a href="https://www.cloudflare.com/" class="emoji-link" target="_blank" rel="noopener noreferrer">Cloudflare</a></li>
-            <li>a custom evaluation framework for LLM workflows, with novel non-LLM reliant metrics for rapid, zero cost evaluations of LLM-generated code at <a href="https://www.clarative.ai/" class="emoji-link" target="_blank" rel="noopener noreferrer">Clarative</a></li>
-            <li>methods to use LLMs in synthetic data generation and data augmentation as a scalable, privacy-preserving solution to analyze features and forecast trends in bulk unstructured data at <a href="https://www.gtri.gatech.edu/" class="emoji-link" target="_blank" rel="noopener noreferrer">Georgia Tech Research Institute</a></li>
-            <li>a constrained-optimization <a href="https://github.com/AnantharamanSI/Counterfactuals" target="_blank" rel="noopener noreferrer">method</a> for generating counterfactuals to uncover bias in AI models (presented at the 2021 IRIS National Science Fair)</li>
-            <li>a damage detection and estimation <a href="https://github.com/AnantharamanSI/ShowKase" target="_blank" rel="noopener noreferrer">tool</a> for homeowners</li>
-            <li><a href="https://github.com/google/BIG-bench" target="_blank" rel="noopener noreferrer">pushing llms to their limits</a> (TMLR Certification Finalist)</li>
-            <li>a mobile app for resolving conflicts among high school students (presented at 2020 International Science and Engineering Fair)</li>
-            <li>computational models of the stimulus response of the Mimosa pudica plant using McCulloch-Pitts neurons abstractions (presented at 2019 International Science and Engineering Fair)</li>
-        </ul>
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2025 Anantharaman Iyer. All rights reserved.</p>
+            <p style="font-size: 0.8em; margin-top: 0.5em;">Last updated: September 21, 2025</p> </div>
+    </footer>
 
-        <p><br>I love building things, in the digital world and the physical one, playing instruments and teaching (Natural Language Processing)! I also make videos on cool concepts I come across on <a class="emoji-link" href="https://www.youtube.com/@AnantharamanSIyer" target="_blank" rel="noopener noreferrer">YouTube</a></p>
-        <p><br>Atlanta, GA</p>
-    </div>
+    <script src="script.js"></script>
 </body>
 </html>
