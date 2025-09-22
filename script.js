@@ -42,6 +42,42 @@ document.addEventListener('DOMContentLoaded', function() {
         setTheme(wantsDark);
     });
 
+    // --- Experience timeline expand/collapse ---
+    const timelineLinks = document.querySelectorAll('.timeline-content a.timeline-link-overlay');
+
+    timelineLinks.forEach(link => {
+        link.addEventListener('click', (event) => {
+            event.preventDefault();
+
+            const timelineContent = link.closest('.timeline-content');
+            if (!timelineContent) return;
+
+            const descriptionContainer = timelineContent.querySelector('.timeline-description');
+            if (!descriptionContainer) return;
+
+            const isExpanded = timelineContent.classList.contains('is-expanded');
+
+            if (isExpanded) {
+                // Collapse
+                descriptionContainer.innerHTML = timelineContent.dataset.originalDescription;
+                timelineContent.classList.remove('is-expanded');
+                delete timelineContent.dataset.originalDescription;
+            } else {
+                // Expand
+                const targetId = link.getAttribute('href').substring(1);
+                const detailElement = document.getElementById(targetId);
+
+                if (detailElement) {
+                    const detailList = detailElement.querySelector('.card-banner-text ul');
+                    if (detailList) {
+                        timelineContent.dataset.originalDescription = descriptionContainer.innerHTML;
+                        descriptionContainer.innerHTML = detailList.outerHTML;
+                        timelineContent.classList.add('is-expanded');
+                    }
+                }
+            }
+        });
+    });
     // --- Scrollspy for navigation highlighting ---
     const sections = document.querySelectorAll('main section[id]');
     const navLinks = document.querySelectorAll('.site-header nav ul li a');
