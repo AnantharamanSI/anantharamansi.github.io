@@ -125,7 +125,8 @@ img { max-width: 100%; height: auto; display: block; }
 .header-profile .name {
     font-size: 1.2em;
     font-weight: 700;
-    margin-bottom: 0.25rem;
+    margin-bottom: 0;
+    line-height: 1.2;
 }
 .header-profile .subtitle {
     font-size: 1.05em;
@@ -401,18 +402,28 @@ h3 { margin-top: 1.2em; margin-bottom: 1em;  }
         position: static;
         height: auto;
         margin-bottom: 3rem;
+        align-items: flex-start;
+        text-align: left;
     }
     .header-profile {
         display: flex;
+        flex-direction: row;
         align-items: center;
         gap: 1rem;
         margin-bottom: 1.5rem;
     }
-    .header-profile .avatar { margin-bottom: 0; }
-    .header-profile .logo { margin-bottom: 0; }
+    .header-profile .avatar {
+        width: 70px;
+        margin-bottom: 0;
+    }
     .header-profile .subtitle { display: none; }
     .site-header nav { margin-bottom: 1rem; }
-    .site-header nav ul { display: flex; flex-wrap: wrap; gap: 0 1.5rem; }
+    .site-header nav ul {
+        display: grid;
+        /* Automatically fit columns, with a minimum width, creating a dynamic grid */
+        grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+        gap: 0.5rem 1rem;
+    }
     .header-footer { display: none; } /* Hide toggle, can be repositioned if needed */
 
     .section-title-vertical {
@@ -431,8 +442,8 @@ h3 { margin-top: 1.2em; margin-bottom: 1em;  }
     }
     .main-content section { padding-right: 0; }
 
-    .about-section { flex-direction: column-reverse; text-align: center; }
-    .profile-links { justify-content: center; margin-top: 1em; gap: 1.2em; }
+    .about-section { flex-direction: column-reverse; text-align: left; }
+    .profile-links { justify-content: flex-start; margin-top: 1em; gap: 1.2em; }
 
     /* Responsive Timeline */
     .timeline-item { display: block; }
