@@ -54,8 +54,8 @@ section[id], .card-banner[id] { scroll-margin-top: 100px; }
 
 /* Header & Navigation */
 .site-header { background-color: #ffffff; padding: 0.5em 0; border-bottom: 1px solid #eee; margin-bottom: 2em; transition: background-color 0.3s ease, border-bottom-color 0.3s ease; position: sticky; top: 0; left: 0; width: 100%; z-index: 1000; }
-.site-header .container { display: flex; gap: 1.2em; align-items: center; position: relative; }
-.site-header .logo { font-size: 1.9em; font-weight: bold; font-family: 'Rasa', serif; padding: 0.5em 0; transition: color 0.3s ease; }
+.site-header .container { max-width: 960px; display: flex; justify-content: space-between; align-items: center; position: relative;}
+.site-header .logo { font-size: 1.9em; font-weight: 600; font-family: 'Rasa', serif; padding: 0.5em 0; transition: color 0.3s ease; }
 .site-header nav ul { list-style: none; display: flex; align-items: center; }
 .site-header nav ul li { margin-left: 1em; font-size: 1.1em; }
 .site-header nav ul li a { text-decoration: none; color: #333; padding: 0.5em 0; transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out; border-bottom: 2px solid transparent; }
@@ -237,8 +237,8 @@ h3 { margin-top: 1.2em; margin-bottom: 1em;  }
 .project-image { flex-shrink: 0; width: 240px; text-align: center; }
 .project-image img { max-width: 100%; height: auto; border-radius: 3px; object-fit: cover; border: 1px solid #eee; transition: border-color 0.3s ease; }
 .project-details { flex-grow: 1; display: flex; flex-direction: column; }
-.project-details h3 { margin-top: 0; margin-bottom: 0.3em; font-size: 1.3em; }
-.project-details h3 strong { color: inherit; }
+.project-details h4 { margin-top: 0; margin-bottom: 0.3em; font-size: 1.3em; line-height: 1.2}
+.project-details h4 strong { color: inherit; }
 .project-details .project-authors { font-size: 0.9em; color: #555; margin-bottom: 0.6em; transition: color 0.3s ease; }
 .project-details .project-authors strong { font-weight: 700; color: inherit; }
 .project-details .project-description { font-size: 0.95em; margin-bottom: 0.8em; }
@@ -253,6 +253,8 @@ h3 { margin-top: 1.2em; margin-bottom: 1em;  }
 .publication-authors { display: block; margin-bottom: 0.1em; font-size: 1em; color: #555; transition: color 0.3s ease; }
 .publication-authors strong { font-weight: 700; color: #333; }
 .publication-venue { display: block; font-size: 1em; font-style: italic; color: #555; margin-top: 0.1em; margin-bottom: 0.2em; transition: color 0.3s ease; }
+.publication-description { display: block; margin-bottom: 0.1em; font-size: 1em; transition: color 0.3s ease; }
+.publication-authors strong { font-weight: 700; color: #333; }
 .publication-links { flex-shrink: 0; margin-top: 0.3em; font-size: 0.85em; white-space: normal; align-self: flex-start; }
 .publication-links a { margin-right: 0.8em; margin-bottom: 0.4em; display: inline-flex; align-items: center; justify-content: center; padding: 0.2em 0.5em; border: 1px solid #ccc; border-radius: 5px; color: #333; background-color: #fffcfa; transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease; min-width: 2.5em; min-height: 2em; text-decoration: none;}
 .publication-links a:hover, .publication-links a:focus { background-color: #ffecd8; border-color: #b36d1e; color: #b36d1e; text-decoration: none; box-shadow: 0 1px 2px rgba(0,0,0,0.1); outline: none; }
