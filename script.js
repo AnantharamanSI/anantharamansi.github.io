@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const detailElement = document.getElementById(targetId);
 
                 if (detailElement) {
-                    const detailList = detailElement.querySelector('.card-banner-text ul');
+                    const detailList = detailElement.querySelector('ul');
                     if (detailList) {
                         timelineContent.dataset.originalDescription = descriptionContainer.innerHTML;
                         descriptionContainer.innerHTML = detailList.outerHTML;
@@ -83,18 +83,29 @@ document.addEventListener('DOMContentLoaded', function() {
     const navLinks = document.querySelectorAll('.site-header nav ul li a');
 
     const onScroll = () => {
-        let index = sections.length;
+        const scrollY = window.scrollY + 200; // Use an offset to activate a bit earlier
+        let currentSectionId = "";
 
-        // Find the current section in view from the bottom up
-        while(--index && window.scrollY + 200 < sections[index].offsetTop) {}
+        // Find the ID of the last section whose top is above the scroll position
+        sections.forEach(section => {
+            if (scrollY >= section.offsetTop) {
+                currentSectionId = section.id;
+            }
+        });
 
-        // Remove active class from all nav links
-        navLinks.forEach((link) => link.classList.remove('active'));
-
-        // Add active class to the corresponding nav link
-        if (navLinks[index]) {
-            navLinks[index].classList.add('active');
+        // If we're scrolled to the very top, no section will be matched.
+        // In that case, default to the first nav link's target.
+        if (currentSectionId === "" && navLinks.length > 0) {
+            currentSectionId = navLinks[0].getAttribute('href').substring(1);
         }
+
+        // Now, update the active class on the corresponding nav link
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${currentSectionId}`) {
+                link.classList.add('active');
+            }
+        });
     };
 
     window.addEventListener('scroll', onScroll);
