@@ -4,8 +4,8 @@ Theme: Minimalist Green
 
 /* --- 1. Variables & Global Styles --- */
 :root {
-    --font-sans: 'Crimson Text', serif;
-    --font-serif: 'Manrope', sans-serif; /* For titles */
+    --font-serif: 'Crimson Text', serif;
+    --font-sans: 'Manrope', sans-serif; /* For titles */
 
     /* Light Theme */
     --color-bg: #fdfdfd;
@@ -29,7 +29,7 @@ html {
 }
 
 body {
-    font-family: var(--font-sans);
+    font-family: var(--font-serif);
     background-color: var(--color-bg);
     color: var(--color-text);
     transition: background-color 0.3s ease, color 0.3s ease;
@@ -54,7 +54,7 @@ strong, b {
 
 /* Headings */
 h1, h2, h3, h4 {
-    font-family: var(--font-serif);
+    font-family: var(--font-sans);
     margin-bottom: 0.4em;
     color: var(--color-text);
     transition: color 0.3s ease;
@@ -65,7 +65,7 @@ h1 { font-size: clamp(2.2em, 5vw, 2.8em); }
 h2 { display: none; } /* Hide original h2, we use vertical titles now */
 h3 { font-size: clamp(1.2em, 3vw, 1.4em); margin-top: 1.2em; }
 h4 { font-size: 1.1em; margin-bottom: 0.2em; }
-p { margin-bottom: 0.7em; font-size: 1.05em; font-family: var(--font-sans); }
+p { margin-bottom: 0.7em; font-size: 1.05em; font-family: var(--font-serif); }
 
 /* Links - Light Mode */
 a {
@@ -131,7 +131,7 @@ img { max-width: 100%; height: auto; display: block; }
 .header-profile .subtitle {
     font-size: 1.05em;
     font-weight: 600;
-    font-family: var(--font-serif);
+    font-family: var(--font-sans);
     color: var(--color-secondary);
     margin-bottom: 1rem;
 }
@@ -140,7 +140,7 @@ img { max-width: 100%; height: auto; display: block; }
 .site-header nav ul li { margin-bottom: 0.1em; }
 .site-header nav ul li a { 
     color: var(--color-secondary);
-    font-family: var(--font-serif);
+    font-family: var(--font-sans);
     transition: color 0.2s ease-in-out;
 }
 .site-header nav ul li a.active,
@@ -171,7 +171,7 @@ img { max-width: 100%; height: auto; display: block; }
 .profile-links { margin-top: 1.5em; display: flex; flex-wrap: wrap; gap: 0.5rem 1.9rem; align-items: center; }
 .profile-links a {
     font-size: 0.8em;
-    font-family: var(--font-serif);
+    font-family: var(--font-sans);
 }
 
 /* Vertical Section Titles */
@@ -181,7 +181,7 @@ img { max-width: 100%; height: auto; display: block; }
     right: 0;
     writing-mode: vertical-rl;
     transform: rotate(180deg);
-    font-family: var(--font-serif);
+    font-family: var(--font-sans);
     color: var(--color-secondary);
     opacity: 0.7;
     font-size: 0.8rem;
