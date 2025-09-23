@@ -33,9 +33,7 @@ body {
     background-color: var(--color-bg);
     color: var(--color-text);
     transition: background-color 0.3s ease, color 0.3s ease;
-    /* Original properties */
     line-height: 1.6;
-    font-size: 1.0em;
 }
 
 strong, b {
@@ -62,7 +60,6 @@ h1, h2, h3, h4 {
 }
 
 h1 { font-size: clamp(2.2em, 5vw, 2.8em); }
-h2 { display: none; } /* Hide original h2, we use vertical titles now */
 h3 { font-size: clamp(1.2em, 3vw, 1.4em); margin-top: 1.2em; }
 h4 { font-size: 1.1em; margin-bottom: 0.2em; }
 p { margin-bottom: 0.7em; font-size: 1.05em; font-family: var(--font-serif); }
@@ -128,13 +125,6 @@ img { max-width: 100%; height: auto; display: block; }
     margin-bottom: 1em;
     line-height: 1.2;
 }
-.header-profile .subtitle {
-    font-size: 1.05em;
-    font-weight: 600;
-    font-family: var(--font-sans);
-    color: var(--color-secondary);
-    margin-bottom: 1rem;
-}
 .site-header nav { width: 100%; } /* Pushes footer down */
 .site-header nav ul { list-style: none; }
 .site-header nav ul li { margin-bottom: 0.1em; }
@@ -160,13 +150,6 @@ img { max-width: 100%; height: auto; display: block; }
 
 /* --- 3. Page Sections --- */
 
-/* About Section - Simplified */
-.about-section {
-    position: relative;
-    padding-right: 3rem; /* Space for vertical title */
-    margin-bottom: 4rem;
-}
-.about-content h1 { display: none; } /* Hide h1 inside about section */
 
 .profile-links { margin-top: 1.5em; display: flex; flex-wrap: wrap; gap: 0.5rem 1.9rem; align-items: center; }
 .profile-links a {
@@ -219,8 +202,6 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 .timeline-content:hover { background-color: var(--color-card-bg); }
-
-.far-side { display: none; } /* Hide old logo container */
 
 .center-side {
     flex-grow: 1;
@@ -304,12 +285,12 @@ img { max-width: 100%; height: auto; display: block; }
     margin-bottom: 4rem;
 }
 
+.about-section,
 .research-section,
 .projects-experiences-section,
 .contact-section {
     position: relative;
     padding-right: 3rem; /* Space for vertical title */
-    padding-top: 1rem;
     margin-bottom: 4rem;
 }
 
@@ -321,25 +302,6 @@ h3 { margin-top: 1.2em; margin-bottom: 1em;  }
 .research-section > p:first-of-type { font-size: 0.9em; font-style: italic; color: var(--color-secondary); margin-top: -0.8em; margin-bottom: 1.5em; transition: color 0.3s ease; }
 .featured-projects-section { margin-bottom: 2.5em; }
 .project-horizontal-list { display: flex; flex-direction: column; gap: 1.5em; }
-.project-card {
-    display: flex;
-    flex-direction: row;
-    align-items: center; /* MODIFIED: Center image and text vertically */
-    gap: 1.5em;
-    background-color: transparent;
-    border: none;
-    padding: 0;
-}
-.project-image { flex-shrink: 0; width: 240px; text-align: center; }
-.project-image img { max-width: 100%; height: auto; border-radius: 3px; object-fit: cover; border: 1px solid var(--color-border); transition: border-color 0.3s ease; }
-.project-details { flex-grow: 1; display: flex; flex-direction: column; }
-.project-details h4 { margin-top: 0; margin-bottom: 0.3em; font-size: 1.3em; line-height: 1.2}
-.project-details h4 strong { color: inherit; }
-.project-details .project-authors { font-size: 0.9em; color: var(--color-secondary); margin-bottom: 0.6em; transition: color 0.3s ease; }
-.project-details .project-authors strong { color: inherit; }
-.project-details .project-description { font-size: 0.95em; margin-bottom: 0.8em; }
-.project-details .project-links { margin-top: auto; padding-top: 0.3em; font-size: 0.9em; }
-.project-details .project-links a { margin-right: 0.8em; }
 
 /* Publication List Styling */
 .publications-list { list-style: none; padding-left: 0; }
@@ -391,6 +353,12 @@ h3 { margin-top: 1.2em; margin-bottom: 1em;  }
 .contact-section p:first-of-type {
     font-family: var(--font-sans);
     font-size: 0.95em;
+}
+.contact-section .linkedin-icon {
+    display: inline;
+    vertical-align: middle;
+    padding: 0 3px;
+    width: 21px;
 }
 
 /* Footer */
@@ -459,20 +427,7 @@ h3 { margin-top: 1.2em; margin-bottom: 1em;  }
     }
     .main-content section { padding-right: 0; }
 
-    .about-section { flex-direction: column-reverse; text-align: left; }
     .profile-links { justify-content: flex-start; margin-top: 1em; gap: 1.2em; }
-
-    /* Responsive Timeline */
-    .timeline-item { display: block; }
-    .timeline-dates { text-align: left; margin-bottom: 0.5rem; }
-    .center-side { grid-column: auto; }
-
-    /* Highlighted Projects Stacked */
-    .project-card { flex-direction: column; align-items: center; padding: 1.2em; gap: 1em; } /* Align items center for stacking */
-    .project-image { width: 80%; max-width: 250px; margin-bottom: 0.8em; }
-    .project-details { align-items: center; text-align: center; }
-    .project-details h3 { font-size: 1.2em; }
-    .project-details .project-authors, .project-details .project-description, .project-details .project-links { text-align: center; }
 
     .site-footer {
         text-align: center;
@@ -511,8 +466,6 @@ body.dark-mode .timeline-content.is-expanded .timeline-description {
 }
 
 body.dark-mode .company-logo-timeline { filter: brightness(.8) contrast(1.2); }
-
-body.dark-mode .project-image img { filter: brightness(.9); }
 
 body.dark-mode .publication-links a:hover,
 body.dark-mode .publication-links a:focus { background-color: var(--color-card-bg); border-color: var(--color-accent); color: var(--color-accent); }
