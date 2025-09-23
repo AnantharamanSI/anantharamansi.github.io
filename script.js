@@ -64,12 +64,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 delete timelineContent.dataset.originalDescription;
             } else {
                 // Expand
-                const targetId = link.getAttribute('href').substring(1);
-                const detailElement = document.getElementById(targetId);
+                const timelineItem = link.closest('.timeline-item');
+                if (!timelineItem) return;
+
+                const detailElement = timelineItem.querySelector('.timeline-details-hidden');
 
                 if (detailElement) {
                     const detailList = detailElement.querySelector('ul');
-                    if (detailList) {
+                    if (detailList) { // Check if a ul exists inside the hidden details
                         timelineContent.dataset.originalDescription = descriptionContainer.innerHTML;
                         descriptionContainer.innerHTML = detailList.outerHTML;
                         timelineContent.classList.add('is-expanded');

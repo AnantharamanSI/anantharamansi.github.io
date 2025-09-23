@@ -206,6 +206,10 @@ img { max-width: 100%; height: auto; display: block; }
     padding: 0;
 }
 
+.timeline-details-hidden {
+    display: none;
+}
+
 .timeline-content {
     display: flex;
     align-items: flex-start;
@@ -215,24 +219,6 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 .timeline-content:hover { background-color: var(--color-card-bg); }
-
-/* Overlay Link for Clickability */
-.timeline-content a.timeline-link-overlay {
-    position: absolute;
-    /* Sized and positioned to cover only the "see more/less" text */
-    top: 50%;
-    right: 0.8em;
-    width: 70px;
-    height: 24px;
-    transform: translateY(-50%);
-    z-index: 3; /* Above the ::after pseudo-element */
-    overflow: hidden;
-    text-indent: -9999px;
-    background-color: transparent;
-    border-radius: 5px;
-    transition: top 0.2s ease, transform 0.2s ease;
-}
-.timeline-content a.timeline-link-overlay:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 4px; }
 
 .far-side { display: none; } /* Hide old logo container */
 
@@ -253,7 +239,19 @@ img { max-width: 100%; height: auto; display: block; }
     flex-shrink: 0;
 }
 .timeline-company { font-size: 1.1em; font-weight: 600; line-height: 1.2; margin-bottom: 0.1em; }
-.timeline-role { color: var(--color-secondary); font-size: 1em; margin-bottom: 0.3em; transition: color 0.3s ease; }
+
+/* New wrapper for flex alignment */
+.timeline-role-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline; /* Aligns the text baseline of the role and the [more] button */
+}
+
+.timeline-role {
+    color: var(--color-secondary);
+    font-size: 1em;
+    margin-bottom: 0; /* Remove bottom margin as it's now in a flex container */
+}
 .timeline-role a.interactive-link { position: relative; z-index: 2;} /* Keep nested links clickable */
 .timeline-description { font-size: 1em; margin-top: 0.4em; margin-bottom: 0; color: var(--color-text); }
 .timeline-description {
@@ -281,37 +279,30 @@ img { max-width: 100%; height: auto; display: block; }
     margin-bottom: 0.4em;
 }
 
-/* Clickable indicator for expandable timeline items */
-.timeline-content.is-expandable::after {
-    content: 'see more';
-    position: absolute;
-    right: 0.8em;
-    top: 50%;
-    transform: translateY(-50%);
+/* The link is now a flex item, not a full-card overlay */
+.timeline-role-wrapper a.timeline-link-overlay {
+    /* Reset any potential inherited link styles */
+    text-decoration: none;
+    /* Style it to look like the button text */
     font-family: var(--font-sans);
-    font-size: 0.7rem;
-    font-weight: 600;
+    font-size: 0.62rem;
+    font-weight: 500;
     letter-spacing: 0.5px;
     text-transform: uppercase;
     color: var(--color-secondary);
-    opacity: 1;
-    transition: opacity 0.2s ease, top 0.2s ease, transform 0.2s ease;
-    z-index: 2;
-    cursor: pointer; /* Hint that this area is clickable */
-}
-.timeline-content.is-expanded::after {
-    content: 'see less';
-    opacity: 1;
-    top: 2.8em; /* Reduced gap */
-    transform: none;
+    cursor: pointer;
 }
 
-/* Move the clickable overlay to match the "see less" position */
-.timeline-content.is-expanded a.timeline-link-overlay {
-    top: 1.8em;
-    transform: none;
+.timeline-content.is-expandable .timeline-role-wrapper a.timeline-link-overlay::after {
+    content: '[more]';
 }
-/* --- 4. Content Sections (Research, Projects, etc.) --- */
+.timeline-content.is-expanded .timeline-role-wrapper a.timeline-link-overlay::after {
+    content: '[less]';
+}
+
+.experience-timeline-section {
+    margin-bottom: 4rem;
+}
 
 .research-section,
 .projects-experiences-section,
@@ -454,6 +445,17 @@ h3 { margin-top: 1.2em; margin-bottom: 1em;  }
         margin-bottom: 1.5rem;
         letter-spacing: normal;
         text-transform: none;
+    }
+
+    /* On mobile, hide redundant headings to prevent duplicates. */
+    /* For Research, hide the first h3 as it's redundant with the main section title. */
+    .research-section h3:first-of-type {
+        display: none;
+    }
+    /* For Projects and Honors, the h3 is the desired heading, so hide the vertical title instead. */
+    #projects-experiences .section-title-vertical,
+    #honors .section-title-vertical {
+        display: none;
     }
     .main-content section { padding-right: 0; }
 
