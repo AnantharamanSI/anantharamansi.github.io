@@ -26,6 +26,7 @@ Theme: Minimalist Green
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 10px;
 }
 
 body {
@@ -43,7 +44,7 @@ strong, b {
 .page-wrapper {
     display: grid;
     grid-template-columns: 180px 1fr;
-    gap: 3rem;
+    gap: 1rem 3rem;
     max-width: 800px;
     width: 100%;
     margin: 1rem auto;
@@ -94,7 +95,41 @@ img { max-width: 100%; height: auto; display: block; }
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
 
 .main-content {
-    padding-top: 1.5rem; /* Align top with header text */
+    padding-top: 0rem; /* Align top with header text */
+    margin-top: -0.5rem;
+}
+
+/* ICLR publication banner */
+.iclr-banner {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+    padding: 0.6rem 1rem;
+    margin-bottom: 1rem;
+    background: rgba(0, 128, 96, 0.08);
+    border: 1px solid rgba(0, 128, 96, 0.25);
+    border-radius: 6px;
+    text-decoration: none;
+    color: var(--color-text);
+    transition: background 0.2s ease, border-color 0.2s ease;
+}
+.iclr-banner:hover {
+    background: rgba(0, 128, 96, 0.14);
+    border-color: rgba(0, 128, 96, 0.4);
+    color: var(--color-text);
+}
+.iclr-banner-text {
+    font-size: 0.95em;
+    flex: 1;
+    min-width: 0;
+}
+.iclr-banner-link {
+    font-family: var(--font-sans);
+    font-size: 0.9em;
+    color: var(--color-accent);
+    white-space: nowrap;
 }
 
 /* --- 2. Header & Navigation --- */
@@ -458,6 +493,15 @@ body.dark-mode {
     --color-secondary: #888;
     --color-card-bg: transparent;
     --color-underline: rgba(52, 211, 153, 0.4); /* From #34d399 */
+}
+
+body.dark-mode .iclr-banner {
+    background: rgba(52, 211, 153, 0.1);
+    border-color: rgba(52, 211, 153, 0.3);
+}
+body.dark-mode .iclr-banner:hover {
+    background: rgba(52, 211, 153, 0.16);
+    border-color: rgba(52, 211, 153, 0.45);
 }
 
 body.dark-mode #darkModeIcon.fa-sun { color: #f9e2af; }
