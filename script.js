@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const navLinks = document.querySelectorAll('.site-header nav ul li a');
 
     const onScroll = () => {
-        const scrollY = window.scrollY + 200; // Use an offset to activate a bit earlier
+        const scrollY = window.scrollY + 250; // Use an offset to activate a bit earlier
         let currentSectionId = "";
 
         // Find the ID of the last section whose top is above the scroll position
@@ -97,14 +97,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // If we're scrolled to the very top, no section will be matched.
         // In that case, default to the first nav link's target.
-        if (currentSectionId === "" && navLinks.length > 0) {
-            currentSectionId = navLinks[0].getAttribute('href').substring(1);
+        
+        // If we're at the bottom of the page, force-highlight Contact.
+        const atPageBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
+        if (atPageBottom) {
+            currentSectionId = 'contact';
         }
 
-        // Now, update the active class on the corresponding nav link
+        
         navLinks.forEach(link => {
             link.classList.remove('active');
-            if (link.getAttribute('href') === `#${currentSectionId}`) {
+            const href = link.getAttribute('href');
+            const isAboutAlias = currentSectionId === 'about' && href === '#top';
+
+            if (href === `#${currentSectionId}` || isAboutAlias) {
                 link.classList.add('active');
             }
         });

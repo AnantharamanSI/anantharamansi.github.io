@@ -286,6 +286,7 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 .about-section,
+.publications-section,
 .research-section,
 .projects-experiences-section,
 .contact-section {
@@ -295,6 +296,7 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 .experience-timeline-section h3,
+.publications-section h3,
 .research-section h3,
 .projects-experiences-section h3 { margin-top: 2.5em; margin-bottom: 1em; font-size: 1.1em; font-weight: 600; border-bottom: 1px solid var(--color-border); padding-bottom: 0.5em; }
 h3 { margin-top: 1.2em; margin-bottom: 1em;  }
